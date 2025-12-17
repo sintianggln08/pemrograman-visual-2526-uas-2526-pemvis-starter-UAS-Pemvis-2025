@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="SOAL 1 UAS"/>
+        <attribute name="authors" value="sinti"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-12-17 04.28.22 PM"/>
+        <attribute name="created" value="c2ludGk7TVNJOzIwMjUtMTItMTc7MDEuMjAuMjAgUE07MjAyOQ=="/>
+        <attribute name="edited" value="c2ludGk7TVNJOzIwMjUtMTItMTc7MDQuMjguMjIgUE07MjsyMTUx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, a, rating, sum, min, max, countH" type="Integer" array="False" size=""/>
+            <declare name="rata" type="Integer" array="False" size=""/>
+            <declare name="daftarrating" type="String" array="False" size=""/>
+            <input variable="n"/>
+            <call expression="INISIALISASI"/>
+            <for variable="a" start="0" end="n-1" direction="dec" step="1">
+                <input variable="rating"/>
+                <assign variable="daftarrating" expression="daftarrating&amp;&quot;&quot;&amp;rating"/>
+            </for>
+            <assign variable="sum" expression="sum+rating"/>
+            <assign variable="rata" expression="sum/n"/>
+            <output expression="&quot;Daftar rating:&quot; &amp; daftarrating" newline="True"/>
+            <output expression="&quot;Rata-rata: &quot; &amp; rata" newline="True"/>
+            <output expression="&quot;Tertinggi:&quot;&amp;max" newline="True"/>
+            <output expression="&quot;Terendah:&quot;&amp;min" newline="True"/>
+            <output expression="&quot;Reviewer rating &#8805;4:&quot;&amp;countH" newline="True"/>
+        </body>
+    </function>
+    <function name="countH" type="Integer" variable="countH">
+        <parameters>
+            <parameter name="rating" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="countH" type="Integer" array="False" size=""/>
+            <if expression="rating&gt;=4">
+                <then>
+                    <assign variable="countH" expression="countH+1"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+    <function name="INISIALISASI" type="None" variable="">
+        <parameters>
+            <parameter name="sum" type="Integer" array="False"/>
+            <parameter name="min" type="Integer" array="False"/>
+            <parameter name="max" type="Integer" array="False"/>
+            <parameter name="countH" type="String" array="False"/>
+            <parameter name="daftarrating" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <assign variable="sum" expression="0"/>
+            <assign variable="countH" expression="0"/>
+            <assign variable="min" expression="100"/>
+            <assign variable="max" expression="-1"/>
+            <assign variable="daftarrating" expression="&quot;Daftar Rating&quot;"/>
+        </body>
+    </function>
+    <function name="NMax" type="Integer" variable="max">
+        <parameters>
+            <parameter name="rating" type="Integer" array="False"/>
+            <parameter name="max" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <if expression="rating&gt;max">
+                <then>
+                    <assign variable="max" expression="rating"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+    <function name="NMin" type="Integer" variable="min">
+        <parameters/>
+        <body>
+            <declare name="min, rating" type="Integer" array="False" size=""/>
+            <if expression="rating&lt;min">
+                <then>
+                    <assign variable="min" expression="rating"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

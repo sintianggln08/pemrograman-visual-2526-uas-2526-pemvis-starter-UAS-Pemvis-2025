@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="soal2"/>
+        <attribute name="authors" value="sinti"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-12-17 04.26.58 PM"/>
+        <attribute name="created" value="c2ludGk7TVNJOzIwMjUtMTItMTc7MDEuNDEuMTIgUE07MjAzMw=="/>
+        <attribute name="edited" value="c2ludGk7TVNJOzIwMjUtMTItMTc7MDQuMjYuNTggUE07MTsyMTU3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="jumlahbarang, c, barang" type="Integer" array="False" size=""/>
+            <input variable="jumlahbarang"/>
+            <declare name="stok, terjual" type="Integer" array="True" size="jumlahbarang"/>
+            <declare name="nama" type="String" array="True" size="jumlahbarang"/>
+            <for variable="c" start="0" end="jumlahbarang" direction="inc" step="1">
+                <input variable="nama[c]"/>
+                <input variable="stok[c]"/>
+                <input variable="terjual[c]"/>
+            </for>
+        </body>
+    </function>
+    <function name="stokvalid" type="Integer" variable="">
+        <parameters/>
+        <body>
+            <declare name="stok" type="Integer" array="False" size=""/>
+            <assign variable="stok" expression="-1"/>
+            <while expression="stok&lt;0">
+                <output expression="&quot;masukkan stok awal (&gt;=0):&quot;" newline="True"/>
+                <input variable="stok"/>
+                <if expression="stok&lt;0-&gt;">
+                    <then/>
+                    <else/>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
